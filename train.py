@@ -354,12 +354,20 @@ def main() -> None:
     (ART / "dataset_stats.json").write_text(json.dumps(stats, indent=2))
     log(f"dataset: { {s: v['images'] for s, v in stats['splits'].items()} } images")
 
+    info_path = ART / "train_info.json"
     if SKIP_TRAIN and WEIGHTS.is_file():
         log("SKIP_TRAIN=1, reusing weights/best.pt")
-        prev = ART / "run_info.json"
-        train_info = json.loads(prev.read_text())["training"] if prev.is_file() else {}
+        train_info = json.loads(info_path.read_text()) if info_path.is_file() else {}
     else:
         train_info = finetune(yaml_path, device)
+        train_info["device"] = device
+        train_info["machine"] = f"{platform.system()} {platform.machine()}"
+        # Saved straight away so an evaluation failure later cannot lose it.
+        info_path.write_text(json.dumps(train_info, indent=2, default=str))
+        for name in ("results.csv", "results.png"):
+            src = ROOT / "runs" / "finetune" / name
+            if src.is_file():
+                shutil.copy(src, ART / f"training_{name}")
 
     # Official ultralytics validation on test, for its confusion matrix plot.
     model = YOLO(str(WEIGHTS))
