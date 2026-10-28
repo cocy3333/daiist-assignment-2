@@ -1,0 +1,99 @@
+{
+  "dataset": {
+    "workspace": "joseph-nelson",
+    "project": "hard-hat-workers",
+    "version": 13,
+    "url": "https://universe.roboflow.com/joseph-nelson/hard-hat-workers/dataset/13",
+    "classes": {
+      "0": "head",
+      "1": "helmet"
+    }
+  },
+  "training": {
+    "epochs": 20,
+    "patience": 5,
+    "imgsz": 416,
+    "batch": 32,
+    "seed": 0,
+    "deterministic": true,
+    "device": "0",
+    "name": "finetune",
+    "exist_ok": true,
+    "plots": true,
+    "verbose": false,
+    "train_minutes": 20.9,
+    "epochs_run": 20,
+    "machine": "Linux x86_64"
+  },
+  "quick_mode": false,
+  "device": "0",
+  "machine": "Linux x86_64",
+  "ultralytics": "8.4.191",
+  "ultralytics_val": {
+    "AP50": 0.9607602051271121,
+    "AP50_95": 0.65751293538589
+  },
+  "report_conf": 0.25,
+  "failures": [
+    {
+      "file": "00_miss.jpg",
+      "kind": "miss",
+      "image": "005300_jpg.rf.2c31335b78e142e0ab5b0cabb142091b.jpg",
+      "score": 0.0
+    },
+    {
+      "file": "01_miss.jpg",
+      "kind": "miss",
+      "image": "005376_jpg.rf.06bf4fabfdb7a5edddd8d3db5351c05e.jpg",
+      "score": 0.0
+    },
+    {
+      "file": "02_miss.jpg",
+      "kind": "miss",
+      "image": "005435_jpg.rf.22830b280d725a3bc5f00f508953256b.jpg",
+      "score": 0.0
+    },
+    {
+      "file": "03_miss.jpg",
+      "kind": "miss",
+      "image": "005493_jpg.rf.d5148a647bb94aa631037fd1a7472380.jpg",
+      "score": 0.0
+    },
+    {
+      "file": "04_false_alert_helmet.jpg",
+      "kind": "false_alert_helmet",
+      "image": "005360_jpg.rf.a79da3d410435e224ca57d2ff4f48849.jpg",
+      "score": 0.713
+    },
+    {
+      "file": "05_false_alert_helmet.jpg",
+      "kind": "false_alert_helmet",
+      "image": "005830_jpg.rf.0f309e7eff08aad4384bd06ff442ae9e.jpg",
+      "score": 0.629
+    },
+    {
+      "file": "06_false_alert_helmet.jpg",
+      "kind": "false_alert_helmet",
+      "image": "005360_jpg.rf.a79da3d410435e224ca57d2ff4f48849.jpg",
+      "score": 0.485
+    },
+    {
+      "file": "07_false_alert_background.jpg",
+      "kind": "false_alert_background",
+      "image": "005970_jpg.rf.a58758c086e953cd337799c0e495b19e.jpg",
+      "score": 0.848
+    },
+    {
+      "file": "08_false_alert_background.jpg",
+      "kind": "false_alert_background",
+      "image": "005970_jpg.rf.a58758c086e953cd337799c0e495b19e.jpg",
+      "score": 0.828
+    },
+    {
+      "file": "09_false_alert_background.jpg",
+      "kind": "false_alert_background",
+      "image": "005428_jpg.rf.e09f6f90b66aeac61fe8d3e4bad7c63b.jpg",
+      "score": 0.825
+    }
+  ]
+}

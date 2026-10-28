@@ -1,0 +1,4 @@
+model,AP50,mAP50_95,head_AP50,head_recall,head_precision
+Finetuned yolo11n,0.95927216052866,0.6399669025790602,0.9481058264578084,0.9352617079889807,0.8969616908850726
+COCO yolo11n zero-shot,0.0,0.0,0.0,0.0,0.0
+Predict nothing,0.0,0.0,0.0,0.0,0.0

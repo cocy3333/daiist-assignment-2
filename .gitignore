@@ -14,4 +14,7 @@ runs/
 
 # Never commit your API key
 .env
+
+# Pretrained checkpoints Ultralytics downloads at train time
 /yolo11*.pt
+weights/yolo26*.pt

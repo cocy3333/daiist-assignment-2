@@ -1,0 +1,7 @@
+model,class,instances,precision,recall,AP50,AP50_95
+Finetuned yolo11n,head,726,0.8969616908850726,0.9352617079889807,0.9481058264578084,0.64829159626014
+Finetuned yolo11n,helmet,1915,0.9125821121778676,0.9430809399477806,0.9704384945995117,0.6316422088979804
+COCO yolo11n zero-shot,head,726,0.0,0.0,0.0,0.0
+COCO yolo11n zero-shot,helmet,1915,0.0,0.0,0.0,0.0
+Predict nothing,head,726,0.0,0.0,0.0,0.0
+Predict nothing,helmet,1915,0.0,0.0,0.0,0.0

@@ -1,0 +1,5 @@
+policy,cost_per_1000_eur,review_share,thresholds,cost_per_day_eur,reviewers
+Do nothing (no camera),1250.0,0.0,-,3600.0,0.0
+Person checks every frame,305.0,1.0,-,878.4,1.6
+"Model alone, t = 0.42",292.2742481118482,0.0,0.42,841.7498345621227,0.0
+"Model + review, 0.03 to 0.66",227.9002439674714,0.10280793011814301,0.03 / 0.66,656.3527026263176,0.16449268818902882

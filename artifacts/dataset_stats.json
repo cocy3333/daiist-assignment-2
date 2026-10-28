@@ -1,0 +1,44 @@
+{
+  "splits": {
+    "train": {
+      "images": 14748,
+      "instances": {
+        "head": 13670,
+        "helmet": 41450
+      },
+      "images_with_bare_head": 2729,
+      "images_without_labels": 1
+    },
+    "valid": {
+      "images": 1413,
+      "instances": {
+        "head": 1339,
+        "helmet": 3913
+      },
+      "images_with_bare_head": 256,
+      "images_without_labels": 0
+    },
+    "test": {
+      "images": 706,
+      "instances": {
+        "head": 726,
+        "helmet": 1915
+      },
+      "images_with_bare_head": 140,
+      "images_without_labels": 0
+    }
+  },
+  "box_size": {
+    "head": {
+      "median_width_pct": 6.971153846153847,
+      "median_area_pct": 0.7766272189349113,
+      "share_under_1pct_area": 0.6116976938038344
+    },
+    "helmet": {
+      "median_width_pct": 8.413461538461538,
+      "median_area_pct": 1.0817307692307692,
+      "share_under_1pct_area": 0.4760059956185864
+    }
+  },
+  "test_base_rate": 0.27489587277546385
+}

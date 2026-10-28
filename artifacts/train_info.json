@@ -1,0 +1,16 @@
+{
+  "epochs": 20,
+  "patience": 5,
+  "imgsz": 416,
+  "batch": 32,
+  "seed": 0,
+  "deterministic": true,
+  "device": "0",
+  "name": "finetune",
+  "exist_ok": true,
+  "plots": true,
+  "verbose": false,
+  "train_minutes": 20.9,
+  "epochs_run": 20,
+  "machine": "Linux x86_64"
+}

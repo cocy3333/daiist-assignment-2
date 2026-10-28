@@ -1,0 +1,28 @@
+{
+  "single_threshold": 0.42,
+  "single_threshold_cost_per_1000": 292.2742481118482,
+  "t_low": 0.03,
+  "t_high": 0.66,
+  "band_cost_per_1000": 227.9002439674714,
+  "band_review_share": 0.10280793011814301,
+  "band_reviewers": 0.16449268818902882,
+  "band_recall": 0.9522727272727273,
+  "coco_zero_shot_cost_per_1000": 1250.0000000000002,
+  "test_workers": {
+    "head": 726,
+    "helmet": 1915,
+    "background_alerts_at_0.001": 1892
+  },
+  "test_base_rate": 0.27489587277546385,
+  "costs": {
+    "c_fn": 25.0,
+    "c_fp": 3.0,
+    "c_tp": 3.0,
+    "c_review": 0.1,
+    "base_rate": 0.05,
+    "cases_per_day": 2880,
+    "review_seconds": 12.0,
+    "reviewer_hours": 6.0,
+    "human_miss_rate": 0.05
+  }
+}

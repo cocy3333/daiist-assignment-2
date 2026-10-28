@@ -209,6 +209,10 @@ def finetune(yaml_path: Path, device: str) -> dict:
     best = Path(model.trainer.best)
     WEIGHTS.parent.mkdir(exist_ok=True)
     shutil.copy(best, WEIGHTS)
+    # Ultralytics' GPU (AMP) check downloads a yolo26n.pt into weights/; it is not ours.
+    for stray in WEIGHTS.parent.glob("*.pt"):
+        if stray != WEIGHTS:
+            stray.unlink()
     log(f"saved {WEIGHTS.relative_to(ROOT)}")
     return {**{k: v for k, v in args.items() if k not in ("data", "project")},
             "train_minutes": round((time.time() - started) / 60, 1),
