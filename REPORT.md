@@ -86,21 +86,21 @@ that matters here.
 
 What this implies:
 
-- **The per-class numbers are trustworthy in size.** 726 bare heads and 1,915
+- The per-class numbers are trustworthy in size. 726 bare heads and 1,915
   helmets in test is enough for stable precision and recall. The caveat is
   clustering: the 726 bare heads sit in only 140 images, about 5 per image, so
   they are not independent. A few crowd photos carry a lot of the `head` score. This could mean that the model has higher false positives if there are already treu positives in the image.
-- **The test base rate is far from production.** 27.5% of test workers have no
+- The test base rate is far from production. 27.5% of test workers have no
   hard hat, against my assumed 5% on site. At 5%, a false alert on a worker
   weighs about 7 times more relative to a true alert than it does in the test
   set (weights 0.95/0.725 against 0.05/0.275), so
   raw test precision overstates how good alerts will look on site. The cost
   model reweights positives and negatives to 5% for this reason. This also works because sites that intend to install this will be eager to reach 100% compliance. A construction site with 27.5% of workers that don't wear helmets already doesn't have high standards, and they can reduce this level more efficiently with other methods such as incentives or individual fines.
-- **Heads are small.** 61% of bare heads cover less than 1% of the image. Misses
+- Heads are small. 61% of bare heads cover less than 1% of the image. Misses
   will concentrate on workers far from the camera, which is exactly what a site
   camera mounted at height produces. Further tests are necessary to find the optimal camera position for every site.
   
-- **Test does not look like production.** These are mostly close, eye-level web
+- Test does not look like production. These are mostly close, eye-level web
   and news photos, many from Chinese sites. Site CCTV looks down from height, at
   lower resolution, in dust and rain. The test score is probably an upper bound on what
   the site would see.
@@ -136,7 +136,7 @@ is compared in the review section.
 Training could have run a bit longer. Validation mAP50-95 was still rising
 slowly at the last epoch (0.645, 0.646, 0.647, 0.648 over the final four).
 More epochs would add a little. The gain would mostly be tighter boxes, not
-more bare heads found, because recall had already levelled off.
+more bare heads found, because recall had already leveled off.
 
 ## Per-class evaluation and failure modes
 
@@ -183,8 +183,8 @@ the cost matrix and scales to 1,000 observations.
 
 ![Cost against threshold](artifacts/cost_curve.png)
 
-**Operating point for the model alone: threshold 0.42, €292 per 1,000
-observations.** At 0.42 the model finds 91.5% of bare heads with 94.2% of its
+Operating point for the model alone: threshold 0.42, €292 per 1,000
+observations. At 0.42 the model finds 91.5% of bare heads with 94.2% of its
 alerts correct on the test set. Lets have a look how this plays out.
 
 | Threshold | € per 1,000 | Recall | Precision | FN | FP |
@@ -232,10 +232,10 @@ if the €25 estimate is off.
 because a review (€0.10) is so much cheaper than a miss (€25): it is worth
 having a person glance at almost any head the model is unsure about.
 
-- Share of cases sent to review: **10.3%**
-- Reviews per day: 10.3% × 2,880 ≈ **296**
-- Time: 296 × 12 s ≈ **59 minutes a day**, which is **0.16 of one reviewer**
-- Bare heads caught (model plus reviewer): **95.2%**
+- Share of cases sent to review: 10.3%
+- Reviews per day: 10.3% × 2,880 ≈ 296
+- Time: 296 × 12 s ≈ 59 minutes a day, which is 0.16 of one reviewer
+- Bare heads caught (model plus reviewer): 95.2%
 
 That is realistic. Nobody needs to be hired: an hour a day fits into the
 existing supervisor's or site office's day, in short batches, and makes the model extremely effective.
@@ -248,14 +248,14 @@ existing supervisor's or site office's day, in short batches, and makes the mode
 | **Model + review (0.03 / 0.66)** | **228** | **656** | **10.3%** | **0.16** |
 
 - Every option with a camera beats doing nothing by at least €2,700 a day.
-- **The model alone barely beats a person checking every frame** (€292 vs €305).
+- The model alone barely beats a person checking every frame*(€292 vs €305).
   On paper a person is competitive because reviews are cheap. In practice the
   check-everything option is weaker than it looks: 2,880 checks a day is 9.6
   hours of staring at frames, and a 5% miss rate for that is optimistic. Human error and fatigue/ distractions can become serious. Not to mention days where the person responsible is out.                                                                         
-- **Model plus review is the cheapest** at €228, €186 a day less than the model
+- Model plus review is the cheapest at €228, €186 a day less than the model
   alone and €222 less than checking everything, while using a tenth of a
   person's day. The avoidable cost falls from €142 to €78 per 1,000.
-- **It also answers alert fatigue.** At the site's 5% base rate, only 74% of the
+- It also answers alert fatigue. At the site's 5% base rate, only 74% of the
   model-alone alerts are real bare heads, so one walk in four is for nothing.
   With the review band, 89% of alerts are real, because the doubtful cases are
   filtered by a 12-second check before anyone walks.
@@ -292,7 +292,7 @@ Recommendation: ship the model with the review band, not alone.
 ## Generative AI use disclosure
 
 I used Claude (Anthropic) for this assignment. It wrote the code (`train.py`, `evaluation.py`,
-`costing.py`, `app.py`), tested it on a synthetic dataset, and drafted some parts of this report, including the cost figures and tables.
+`costing.py`, `app.py`), tested it on a synthetic dataset, and drafted some parts of this report, including the cost figures, tables and graphs as well as professional formatting.
 I chose the problem and the dataset, reviewed and ⟦changed / kept⟧ the cost
 assumptions, ran the training on Kaggle, and wrote the analysis in my own
 words. 
