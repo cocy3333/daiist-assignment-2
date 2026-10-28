@@ -4,7 +4,7 @@
 - **Name**: Constantin Hatecke
 - **Student ID**: 20241
 - **Email**: chatecke.ieu2022@student.ie.edu
-- **Group**: ⟦BBADBA 5A⟧
+- **Group**: BBADBA 5A
 
 ## Business problem, and the cost of being wrong
 
@@ -293,6 +293,6 @@ Recommendation: ship the model with the review band, not alone.
 
 I used Claude (Anthropic) for this assignment. It wrote the code (`train.py`, `evaluation.py`,
 `costing.py`, `app.py`), tested it on a synthetic dataset, and drafted some parts of this report, including the cost figures, tables and graphs as well as professional formatting.
-I chose the problem and the dataset, reviewed and ⟦changed / kept⟧ the cost
+I chose the problem and the dataset, reviewed and tweaked the cost
 assumptions, ran the training on Kaggle, and wrote the analysis in my own
 words. 
